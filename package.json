@@ -1,0 +1,26 @@
+{
+  "name": "cardgames",
+  "version": "1.0.0",
+  "description": "Card games with express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "card",
+    "games"
+  ],
+  "author": "Alex and Taylor",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
