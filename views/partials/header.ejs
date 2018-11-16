@@ -1,25 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+  <html>
+  <nav class="navbar navbar-custom">
+    <a class="navbar-brand" href="#">
+      <span class="navbar-text align">Card Game App</span></a>
+      <button type="button" class="btn btn-info align-right" data-toggle="modal" data-target="#Login">Login</button>
+      <button type="button" class="btn btn-info align-right" data-toggle="modal" data-target="#registration">Register</button>
+      <div id="Login" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
-<head>
-  <!-- Home page-->
-  <title>card game </title>
-  <!-- External CSS-->
-  <!-- Noramlize-->
-  <!-- Jquery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css">
-  <!-- Bootstrap-->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <!-- Bootstrap Grid CSS-->
-  <link rel="stylesheet" href="/styles/bootGrid.css" type="text/css">
-  <!-- Bootstrap-->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-</head>
-<body>
+          <!-- Modal content-->
+          <div id="Login" class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Login</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <input type="email" placeholder="example@example.com">
+              <input type="password" placeholder="Password">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="registration" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div id="registration" class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Registration</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <input type="email" placeholder="example@example.com">
+              <input type="password" placeholder="Password">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </nav>
 
   <header>card Game app Header</header>
-</body>
-</html>
+  </html>

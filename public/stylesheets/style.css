@@ -1,5 +1,37 @@
-.sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
+.navbar-custom{
+  background-color: burlywood ;
+  height: 80px;
+  padding: 0.25rem 2rem;
+}
+.navbar-text{
+  color:white;
+  padding-left: 10px;
+  font-size: 2rem;
+}
+.headImg{
+  height: 80px;
+  width: 80px;
+}
+.headerRow{
+  height: 3rem;
+}
+.btn-outline-primary{
+  background-color: #e8fdff;
+  color: #00a087;
+  border-color: black;
+  height: 85%;
+  width: 8.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+}
+/* importants are used to override bootstrap defualt behaviors */
+.btn-outline-primary:hover, .btn-outline-primary:active {
+  color: black !important;
+  background-color: white !important;
+  border-color: black !important;
+}
+.btn-outline-primary:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
