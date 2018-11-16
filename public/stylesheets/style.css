@@ -1,20 +1,22 @@
+/* HEADER BAR */
 .navbar-custom{
   background-color: burlywood ;
-  height: 80px;
+  height: 5rem;
   padding: 0.25rem 2rem;
 }
 .navbar-text{
   color:white;
-  padding-left: 10px;
+  padding-left: 0.75rem;
   font-size: 2rem;
 }
 .headImg{
-  height: 80px;
-  width: 80px;
+  height: 5rem;
+  width: 5rem;
 }
 .headerRow{
   height: 3rem;
 }
+/* HEADER BUTTON */
 .btn-outline-primary{
   background-color: #e8fdff;
   color: #00a087;

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const goofGame = require('../games/goof')
 /**
  * 
  * @param {*} req 
@@ -50,5 +50,6 @@ exports.render_game_goof = (req, res) => {
 };
 
 exports.post_game_goof = (req, res) => {
+  goofGame.turn(4, 5)
   res.redirect('/');
 }

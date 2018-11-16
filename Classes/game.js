@@ -1,3 +1,8 @@
+/* -----------------
+* The following is test code for classes and is removed on push to master
+* 
+*/
+
 const Deck = require('./deck')
 const Hand = require('./hand')
 const PlayArea = require('./playArea')
