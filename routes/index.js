@@ -45,7 +45,7 @@ router.get('/goofSpiel', function(req, res) {
 });
 
 router.post('/goofSpiel', function(req, res) {
-  res.redirect('/');
+  res.redirect('/goofSpiel');
 });
 
 module.exports = router;
