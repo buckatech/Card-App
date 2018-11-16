@@ -16,9 +16,11 @@
   "dependencies": {
     "compression": "^1.7.3",
     "cookie-session": "^2.0.0-beta.3",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "prompt": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.6"
