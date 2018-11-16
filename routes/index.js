@@ -1,51 +1,22 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const indexController = require('../controllers/indexController');
 
-// GET home page.
-router.get('/', function(req, res) {
-  res.render('index');
-});
+// Get home page
+router.get('/', indexController.render_homepage);
+// Get goofSpiel
+router.get('/goofSpiel', indexController.render_game_goof);
+// Post to goofSpiel
+router.post('/goofSpiel', indexController.post_game_goof);
+// // Post to login
+// router.post('/login', indexController.post_login);
+// // Post to register
+// router.post('/register', indexController.post_register);
+// // Post to logout
+// router.post('/logout', indexController.post_logout);
 
-router.get('/goofSpiel', function(req, res) {
-  let deck = {
-    cards:
-    [{ suit: 'H', val: 0 },
-      { suit: 'H', val: 1 },
-      { suit: 'H', val: 2 },
-      { suit: 'H', val: 3 },
-      { suit: 'H', val: 4 },
-      { suit: 'H', val: 5 },
-      { suit: 'H', val: 6 },
-      { suit: 'H', val: 7 },
-      { suit: 'H', val: 8 },
-      { suit: 'H', val: 9 },
-      { suit: 'H', val: 10 },
-      { suit: 'H', val: 11 },
-      { suit: 'H', val: 12 }],
-    values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    suits:
-    ['H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H'],
-    img:
-    ['0H.png',
-      '1H.png',
-      '2H.png',
-      '3H.png',
-      '4H.png',
-      '5H.png',
-      '6H.png',
-      '7H.png',
-      '8H.png',
-      '9H.png',
-      '10H.png',
-      '11H.png',
-      '12H.png'
-    ]
-  }
-  res.render('goofSpiel', {Deck: deck});
-});
+/*TODO ERROR HANDLERS */
 
-router.post('/goofSpiel', function(req, res) {
-  res.redirect('/');
-});
+// router.get('/loginErr', indexController.render_loginErr);
 
 module.exports = router;
