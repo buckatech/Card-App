@@ -20,7 +20,8 @@
     "express": "^4.16.4",
     "knex": "^0.15.2",
     "morgan": "^1.9.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "prompt": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.6"
