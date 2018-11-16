@@ -27,8 +27,8 @@ exports.exampleReq = () => {
 
 // Shifts all relevent cards for the round to the discard pile in goofSpiel Object
 discardShift = (game, deck1, bet1, deck2, bet2) => {
-  game.discard.draw(deck1, deck1.values.indexOf(bet1))
-  game.discard.draw(deck2, deck2.values.indexOf(bet2))
+  game.discard.draw(deck1, bet1)
+  game.discard.draw(deck2, bet2)
   game.discard.draw(game.activeCard, 0)
   return game
 }
@@ -49,10 +49,6 @@ exports.turn = (bet1, bet2) => {
     discardShift(goofSpiel, P1Deck, bet1, P2Deck, bet2)
   }
   // debug statements
-  console.log(goofSpiel.activeCard.cards.length)
-  console.log(P1Deck.cards.length)
-  console.log(P2Deck.cards.length)
-  console.log(goofSpiel)
 }
 
 

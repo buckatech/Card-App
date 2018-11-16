@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const goofGame = require('../games/goof')
+const Deck = require("../Classes/deck");
+const GoofSpiel = require("../Classes/gameClasses/goof");
+const prompt = require("prompt");
 /**
  * 
  * @param {*} req 
@@ -50,6 +53,9 @@ exports.render_game_goof = (req, res) => {
 };
 
 exports.post_game_goof = (req, res) => {
-  goofGame.turn(4, 5)
+  let first = parseInt(req.body.first.replace(/[^0-9]/g, ""));
+  let second = parseInt(req.body.second.replace(/[^0-9]/g, ""));
+  console.log(first, second, typeof(first), typeof(second))
+  goofGame.turn(first, second)
   res.redirect('/');
 }

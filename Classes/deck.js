@@ -40,14 +40,14 @@ module.exports = class Deck {
     this.values.push(TargetDeck.values[cardIndex])
     this.suits.push(TargetDeck.suits[cardIndex])
     this.img.push(TargetDeck.img[cardIndex])
-    removeFromValues(TargetDeck)
+    removeFromValues(TargetDeck, cardIndex)
   }
   /**
    * @param {Object} Deck - Object with Class Deck.
    * @param {number} int - Number of cards you want to Draw
    */
   /* TODO figure out how to link jsdoc comments together */
-  drawMany(TargetDeck, int) {
+  drawMany(TargetDeck, targetIndex, int) {
     for (let i = 0; i < int; i++) {
       this.draw(TargetDeck)
     }
