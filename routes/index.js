@@ -17,6 +17,12 @@ router.post('/goofSpiel', indexController.post_game_goof);
 
 /*TODO ERROR HANDLERS */
 
+<<<<<<< HEAD
 // router.get('/loginErr', indexController.render_loginErr);
+=======
+router.post('/goofSpiel', function(req, res) {
+  res.redirect('/goofSpiel');
+});
+>>>>>>> feature/JQuery
 
 module.exports = router;

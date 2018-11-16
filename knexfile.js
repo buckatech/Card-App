@@ -8,12 +8,10 @@ module.exports = {
       host: "127.0.0.1",
       user: "bubbles",
       password: "bubbles1234",
-<<<<<<< HEAD
       database: "cardgame",
       charset: "utf8"
     }
   }
-=======
       database: "bubbles",
       charset: "utf8"
     }
@@ -51,6 +49,5 @@ module.exports = {
     }
   }
 
->>>>>>> feature/header-login-register
 };
 
