@@ -1,37 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <!-- Home page-->
-  <title>card game </title>
-  <!-- External CSS-->
-  <!-- Noramlize-->
-    <!-- Jquery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css">
-  <!-- Bootstrap-->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <!-- Bootstrap Grid CSS-->
-  <link rel="stylesheet" href="/styles/bootGrid.css" type="text/css">
-  <!-- Bootstrap-->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-</head>
-<body>
+<% include partials/head %>
+<main>
+<body id="playArea">
+  <% include partials/header %>
 <!--function used to split the string src to retreive card id examples(0H, 2S)-->
   <% function cardID (fileName) {
     let fileArray = fileName.split(".");
     return fileArray[0];
   } %>
-  <% include partials/header %>
   <h1 class="container">Goofspiel Game page</h1>
   <form method="post" action="./goofSpiel">
     <% for(var i = 0; i < Deck.img.length; i++) { %>
-    <button id='<%= cardID(Deck.img[i]) %>' type="submit" value="<%= cardID(Deck.img[i]) %>"><img src="/images/<%= Deck.img[i] %>"></button>
+    <button name="card" id='<%= cardID(Deck.img[i]) %>' type="submit" value="<%= cardID(Deck.img[i]) %>"><img src="/images/<%= Deck.img[i] %>"></button>
     <% } %>
   </form>
   <% include partials/footer %>
 </body>
+</main>
 </html>
 
