@@ -35,10 +35,11 @@ module.exports = class Deck {
    * Deck1 has Card, value, and suit of Deck2[0]
    * Deck2, value, and suit of TargetDeck[0] removed
    */
-  draw(TargetDeck) {
-    this.cards.push(TargetDeck.cards[0]);
-    this.values.push(TargetDeck.values[0])
-    this.suits.push(TargetDeck.suits[0])
+  draw(TargetDeck, cardIndex) {
+    this.cards.push(TargetDeck.cards[cardIndex]);
+    this.values.push(TargetDeck.values[cardIndex])
+    this.suits.push(TargetDeck.suits[cardIndex])
+    this.img.push(TargetDeck.img[cardIndex])
     removeFromValues(TargetDeck)
   }
   /**
@@ -58,7 +59,15 @@ module.exports = class Deck {
     let len = this.cards.length, int;
     while(len){
       int = Math.floor(Math.random() * len--);
-      [this.cards[len], this.cards[int], this.suits[len], this.suits[int], this.values[len], this.suits[int]] = [this.cards[int], this.cards[len], this.suits[int], this.suits[len], this.values[int], this.suits[len]];
+      [this.cards[len], this.cards[int],
+      this.suits[len], this.suits[int], 
+      this.values[len], this.values[int], 
+      this.img[len], this.img[int]] 
+      = 
+      [this.cards[int], this.cards[len], 
+      this.suits[int], this.suits[len], 
+      this.values[int], this.values[len], 
+      this.img[int], this.img[len]];
     }
     return this;
   }
