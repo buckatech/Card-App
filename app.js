@@ -7,7 +7,7 @@ const cookieSession = require('cookie-session');
 
 
 // Set port 8080
-const PORT = 8080;
+const PORT = 8000;
 
 // Router Imports
 const indexRouter = require('./routes/index');
@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // logger, Parser, and File Serving
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -34,7 +34,7 @@ app.use('/', indexRouter);
 
 // Connect to default port
 app.listen(PORT, () => {
-  console.log(`App spining up on port ${PORT}!`);
+  console.log(`App spinning up on port ${PORT}!`);
 });
 
 module.exports = app;
