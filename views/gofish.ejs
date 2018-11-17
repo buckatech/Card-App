@@ -1,0 +1,30 @@
+<% include partials/head %>
+<main class="gofish">
+
+  <body id="playArea">
+    <% include partials/header %>
+    <!--function used to split the string src to retreive card id examples(0H, 2S)-->
+    <% function cardID (fileName) {
+    let fileArray = fileName.split(".");
+    return fileArray[0];
+    } %>
+    <h1 class="text-center">Go Fish!!</h1>
+    <div class="opponent container mx-auto d-block">
+      <% for(var i = 0; i < Deck.img.length; i++) { %>
+      <img class="cardback" src="/images/cardback.png">
+      <% } %>
+    </div>
+    <div class="playarea"></div>
+    <div class="player container mx-auto d-block">
+      <form method="post" action="./goofSpiel">
+        <% for(var i = 0; i < Deck.img.length; i++) { %>
+        <button class="myCard" name="card" id='<%= cardID(Deck.img[i]) %>' type="submit" value="<%= cardID(Deck.img[i]) %>"><img
+            class="cardFront" src="/images/<%= Deck.img[i] %>"></button>
+        <% } %>
+      </form>
+    </div>
+    <% include partials/footer %>
+  </body>
+</main>
+
+</html>

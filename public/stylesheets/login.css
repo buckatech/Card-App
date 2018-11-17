@@ -1,0 +1,23 @@
+#Login .modal-header {
+  background-color: black;
+}
+#Login .close {
+  color: white;
+}
+#Login .modal-title {
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 2rem;
+}
+#Login .modal-body .email {
+  width: 17rem;
+  margin-right: 9rem;
+}
+#Login .modal-body .password {
+  width: 15rem;
+}
+#Login .modal-footer {
+  background-color: black;
+}
+
+/*# sourceMappingURL=login.css.map */

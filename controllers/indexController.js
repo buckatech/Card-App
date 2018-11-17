@@ -47,20 +47,3 @@ exports.post_game_goof = (req, res) => {
   }
 
 };
-
-// const turn = (bet1, bet2) => {
-//   /* bet1 and bet2 will become res.body */
-//   // debug statements
-//   console.log(firstImg)
-//   console.log(`Player one bets ${bet1}`);
-//   console.log(`Player two bets ${bet2}`);
-//   // high bet scores prize card, all cards to discard
-//   if (bet1 > bet2) {
-//     goofSpiel.playerScored(0, goofSpiel.activeCard.values[0] + 1);
-//     //discardShift(goofSpiel, P1Deck, bet1, P2Deck, bet2);
-//     discardShift(firstImg, secondImg);
-//   } else if (bet1 < bet2) {
-//     goofSpiel.playerScored(1, goofSpiel.activeCard.values[0] + 1);
-//     //discardShift(goofSpiel, P1Deck, bet1, P2Deck, bet2);
-//     discardShift(firstImg, secondImg);
-//   }
