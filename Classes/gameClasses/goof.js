@@ -1,4 +1,5 @@
 const Deck = require("../deck");
+
 module.exports = class GoofSpiel {
   constructor() {
     this.playerOneScore = 0;
@@ -13,4 +14,10 @@ module.exports = class GoofSpiel {
       this.playerTwoScore += inputValue
     }
   }
+  shiftTo(deck, index){
+    console.log(deck.img.indexOf(index))
+    console.log('^^^^^^^^^^^^^^^')
+    this.discard.draw(deck, index)
+  }
+
 }
