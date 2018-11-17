@@ -15,7 +15,7 @@
   </div>
   <div class="playarea"></div>
   <div class="player container mx-auto d-block">
-    <form method="post" action="./goofSpiel">
+    <form method="post" action="/goofSpiel">
       <% for(var i = 0; i < Deck.img.length; i++) { %>
       <button class="myCard" name="card" id='<%= cardID(Deck.img[i]) %>' type="submit" value="<%= cardID(Deck.img[i]) %>"><img class="cardFront" src="/images/<%= Deck.img[i] %>"></button>
       <% } %>
