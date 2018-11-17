@@ -1,29 +1,28 @@
 /* Main Body */
-.goofspiel{
-  background-color: green;
+main.gofish {
+  background-image: url(/images/reef.jpg);
 }
 
 .myCard {
   padding: 0rem;
   border: 0rem;
-  margin-right: .92rem;
+  margin-right: 0.92rem;
   margin-bottom: 6rem;
   border-radius: 2.5rem;
   height: 3.75rem;
   width: 3.75rem;
 }
 
-
 .cardFront {
   height: 6.75rem;
   width: 4.675rem;
- }
+}
 
 .cardback {
   padding-left: 1rem;
   border: 0rem;
-  margin-left:-1.50rem;
-  margin-right:-1.50rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
   margin-top: 6.25rem;
   margin-bottom: 6.25rem;
   border-radius: 2.5rem;
@@ -31,11 +30,8 @@
   width: 7.625rem;
 }
 
-
 .playarea {
   height: 13rem;
 }
 
-
-
-
+/*# sourceMappingURL=gofish.css.map */

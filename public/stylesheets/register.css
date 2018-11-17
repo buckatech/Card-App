@@ -1,0 +1,23 @@
+#registration .modal-header {
+  background-color: black;
+}
+#registration .close {
+  color: white;
+}
+#registration .modal-title {
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 2rem;
+}
+#registration .modal-body .email {
+  width: 17rem;
+  margin-right: 9rem;
+}
+#registration .modal-body .password {
+  width: 15rem;
+}
+#registration .modal-footer {
+  background-color: black;
+}
+
+/*# sourceMappingURL=register.css.map */

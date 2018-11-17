@@ -2,8 +2,11 @@
   <nav class="navbar navbar-custom">
     <a class="navbar-brand" href="#">
       <span class="navbar-text">Card Game App</span></a>
-      <button id="btn" type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#Login">Login</button>
-      <button id="btn" type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#registration">Register</button>
+      <button id="btn" type="button" class="btn btn-info ml-auto" data-toggle="modal" data-target="#Login">Login</button>
+      <button id="btn" type="button" class="btn btn-info" data-toggle="modal" data-target="#registration">Register</button>
+      <form method="get" action='/'>
+        <input id="btn" type="submit" class="btn btn-info" value="Home">
+      </form>
       <div id="Login" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -14,11 +17,13 @@
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-              <input type="email" placeholder="example@example.com">
-              <input type="password" placeholder="Password">
+              <label for="email">Email:</label>
+              <input class="email" type="email" placeholder="example@example.com">
+              <label for="password">Password:</label>
+              <input class="password" type="password" placeholder="Password">
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Login</button>
+              <button id="Login" type="button" class="btn btn-default" data-dismiss="modal">Login</button>
             </div>
           </div>
         </div>
@@ -34,11 +39,13 @@
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-              <input type="email" placeholder="example@example.com">
-              <input type="password" placeholder="Password">
+              <label for="email">Email:</label>
+              <input class="email" type="email" placeholder="example@example.com">
+              <label for="password">Password:</label>
+              <input class="password" type="password" placeholder="Password">
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Register</button>
+              <button id="registration" type="button" class="btn btn-default" data-dismiss="modal">Register</button>
             </div>
           </div>
         </div>

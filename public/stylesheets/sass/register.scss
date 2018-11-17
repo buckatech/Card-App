@@ -1,0 +1,25 @@
+#registration {
+  .modal-header {
+    background-color: black;
+  }
+  .close {
+    color: white;
+  }
+  .modal-title {
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 2rem;
+  }
+  .modal-body {
+    .email {
+      width:17rem;
+      margin-right:9rem;
+    }
+    .password {
+      width:15rem;
+    }
+  }
+  .modal-footer {
+    background-color: black;
+  }
+}
