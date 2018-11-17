@@ -5,13 +5,11 @@ const removeFromValues = classHelp.removeFromValues
 module.exports = class Deck {
   constructor(suits, values) {
     this.cards = [];
-    this.img = []
     if (typeof(suits) === 'object' && typeof(values) === 'object' )
     suits.forEach(suitEle => {
       values.forEach(valEle => {
         let card = new Card(suitEle, valEle)
         this.cards.push(card)
-        this.img.push(`${card.val}${card.suit}.png`)
       })
     });
   }
@@ -36,6 +34,13 @@ module.exports = class Deck {
     })
     return outArr
   }
+  get Images() {
+    let outArr = []
+    this.cards.forEach(element => {
+      outArr.push(element.Image)
+    })
+    return outArr
+  }
   /**
    * Places the first card from TargetDeck into This Deck
    * @memberof Deck
@@ -54,7 +59,6 @@ module.exports = class Deck {
    */
   draw(TargetDeck, cardIndex) {
     this.cards.push(TargetDeck.cards[cardIndex]);
-    this.img.push(TargetDeck.img[cardIndex])
     removeFromValues(TargetDeck, cardIndex)
   }
   /**
@@ -74,11 +78,7 @@ module.exports = class Deck {
     let len = this.cards.length, int;
     while(len){
       int = Math.floor(Math.random() * len--);
-      [this.cards[len], this.cards[int],
-      this.img[len], this.img[int]] 
-      = 
-      [this.cards[int], this.cards[len], 
-      this.img[int], this.img[len]];
+      [this.cards[len], this.cards[int]] = [this.cards[int], this.cards[len]];
     }
     return this;
   }

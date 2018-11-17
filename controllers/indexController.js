@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Deck = require("../Classes/deck");
+const Card = require("../Classes/card")
 const GoofSpiel = require("../Classes/gameClasses/goof");
 const prompt = require("prompt");
 
@@ -18,11 +19,13 @@ exports.render_homepage = (req, res) => {
   res.render("index");
 };
 exports.render_game_goof = (req, res) => {
-    res.render("goofSpiel", { Deck: goofSpiel.P1Hand });
+    res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images });
 };
 
 exports.post_game_goof = (req, res) => {
-  res.render("goofSpiel", { Deck: goofSpiel.P1Hand })
+  let drawIndex = goofSpiel.P1Hand.Images.indexOf(`${req.body.card}.png`)
+    goofSpiel.shiftTo(goofSpiel.P1Hand, drawIndex)
+  res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images })
 };
 
 // const turn = (bet1, bet2) => {
