@@ -9,15 +9,15 @@
   } %>
   <h1 class="text-center">Goofspiel!!</h1>
   <div class="opponent container mx-auto d-block">
-    <% for(var i = 0; i < Deck.img.length; i++) { %>
+    <% for(var i = 0; i < Deck.length; i++) { %>
     <img class="cardback" src="/images/cardback.png">
     <% } %>
   </div>
   <div class="playarea"></div>
   <div class="player container mx-auto d-block">
-    <form method="post" action="./goofSpiel">
-      <% for(var i = 0; i < Deck.img.length; i++) { %>
-      <button class="myCard" name="card" id='<%= cardID(Deck.img[i]) %>' type="submit" value="<%= cardID(Deck.img[i]) %>"><img class="cardFront" src="/images/<%= Deck.img[i] %>"></button>
+    <form method="post" action="/goofSpiel">
+      <% for(var i = 0; i < Deck.length; i++) { %>
+      <button class="myCard" name="card" id='<%= cardID(Deck[i]) %>' type="submit" value="<%= cardID(Deck[i]) %>"><img class="cardFront" src="/images/<%= Deck[i] %>"></button>
       <% } %>
     </form>
   </div>

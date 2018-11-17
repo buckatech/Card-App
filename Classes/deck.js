@@ -5,19 +5,41 @@ const removeFromValues = classHelp.removeFromValues
 module.exports = class Deck {
   constructor(suits, values) {
     this.cards = [];
-    this.values = [];
-    this.suits = [];
-    this.img = []
     if (typeof(suits) === 'object' && typeof(values) === 'object' )
     suits.forEach(suitEle => {
       values.forEach(valEle => {
         let card = new Card(suitEle, valEle)
         this.cards.push(card)
-        this.values.push(card.val)
-        this.suits.push(card.suit)
-        this.img.push(`${card.val}${card.suit}.png`)
       })
     });
+  }
+  get SuitValues() {
+    let outArr = []
+    this.cards.forEach(element => {
+      outArr.push(element.SuitValue)
+    });
+    return outArr
+  }
+  get Values() {
+    let outArr = []
+    this.cards.forEach(element => {
+      outArr.push(element.Value)
+    })
+    return outArr
+  }
+  get Suits() {
+    let outArr = []
+    this.cards.forEach(element => {
+      outArr.push(element.Suit)
+    })
+    return outArr
+  }
+  get Images() {
+    let outArr = []
+    this.cards.forEach(element => {
+      outArr.push(element.Image)
+    })
+    return outArr
   }
   /**
    * Places the first card from TargetDeck into This Deck
@@ -37,10 +59,6 @@ module.exports = class Deck {
    */
   draw(TargetDeck, cardIndex) {
     this.cards.push(TargetDeck.cards[cardIndex]);
-    this.values.push(TargetDeck.values[cardIndex])
-    this.suits.push(TargetDeck.suits[cardIndex])
-    this.img.push(TargetDeck.img[cardIndex])
-    removeFromValues(TargetDeck, cardIndex)
   }
   /**
    * @param {Object} Deck - Object with Class Deck.
@@ -59,15 +77,7 @@ module.exports = class Deck {
     let len = this.cards.length, int;
     while(len){
       int = Math.floor(Math.random() * len--);
-      [this.cards[len], this.cards[int],
-      this.suits[len], this.suits[int], 
-      this.values[len], this.values[int], 
-      this.img[len], this.img[int]] 
-      = 
-      [this.cards[int], this.cards[len], 
-      this.suits[int], this.suits[len], 
-      this.values[int], this.values[len], 
-      this.img[int], this.img[len]];
+      [this.cards[len], this.cards[int]] = [this.cards[int], this.cards[len]];
     }
     return this;
   }
