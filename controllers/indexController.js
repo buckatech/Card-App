@@ -19,23 +19,29 @@ exports.render_homepage = (req, res) => {
   res.render("index");
 };
 exports.render_game_goof = (req, res) => {
+  console.log(goofSpiel, 'GET FIRED')
+  if (goofSpiel.currentState === 0) {
     res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images });
+    
+  } else if (goofSpiel.currentState === 1){
+    res.render("goofSpiel", { Deck: goofSpiel.P2Hand.Images })
+  } else {
+    res.send('borked')
+  }
+    //{ Deck: goofSpiel.P2Hand.Images }
 };
 
 exports.post_game_goof = (req, res) => {
   if (goofSpiel.currentState === 0) {
     let drawIndex = goofSpiel.P1Hand.Images.indexOf(`${req.body.card}.png`)
-    goofSpiel.shiftTo(goofSpiel.P1Hand, drawIndex)
-    console.log(goofSpiel.currentState)
+    goofSpiel.discardCard(goofSpiel.P1Hand.cards, drawIndex)
     goofSpiel.currentState = 1
-  res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images })
+    res.redirect('/goofSpiel')
   } else if (goofSpiel.currentState === 1){
-    console.log('1 fired')
     let drawIndex = goofSpiel.P2Hand.Images.indexOf(`${req.body.card}.png`)
-    goofSpiel.shiftTo(goofSpiel.P2Hand, drawIndex)
-    console.log(goofSpiel.currentState)
+    goofSpiel.discardCard(goofSpiel.P2Hand.cards, drawIndex)
     goofSpiel.currentState = 0
-  res.render("goofSpiel", { Deck: goofSpiel.P2Hand.Images })
+    res.redirect('/goofSpiel')
   } else {
     res.send('borked')
   }

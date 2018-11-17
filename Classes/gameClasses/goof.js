@@ -20,8 +20,8 @@ module.exports = class GoofSpiel {
       this.playerTwoScore += inputValue
     }
   }
-  shiftTo(deck, index){
-    this.discard.draw(deck, index)
+  discardCard(targetDeck, cardIndex) {
+    this.discard.cards.push((targetDeck.splice(cardIndex, 1)))
   }
   // const discardShift = (ind1, ind2) => {
   //   goofSpiel.shiftTo(P1Deck, ind1);

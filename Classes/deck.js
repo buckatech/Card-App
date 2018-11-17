@@ -59,7 +59,6 @@ module.exports = class Deck {
    */
   draw(TargetDeck, cardIndex) {
     this.cards.push(TargetDeck.cards[cardIndex]);
-    removeFromValues(TargetDeck, cardIndex)
   }
   /**
    * @param {Object} Deck - Object with Class Deck.
