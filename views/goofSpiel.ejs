@@ -7,12 +7,20 @@
     let fileArray = fileName.split(".");
     return fileArray[0];
   } %>
-  <h1 class="container">Goofspiel Game page</h1>
-  <form method="post" action="/goofSpiel">
+  <h1 class="text-center">Goofspiel!!</h1>
+  <div class="opponent container mx-auto d-block">
     <% for(var i = 0; i < Deck.img.length; i++) { %>
-    <button class="myCard" name="card" id='<%= cardID(Deck.img[i]) %>' type="submit" value="<%= cardID(Deck.img[i]) %>"><img src="/images/<%= Deck.img[i] %>"></img></button>
+    <img class="cardback" src="/images/cardback.png">
     <% } %>
-  </form>
+  </div>
+  <div class="playarea"></div>
+  <div class="player container mx-auto d-block">
+    <form method="post" action="./goofSpiel">
+      <% for(var i = 0; i < Deck.img.length; i++) { %>
+      <button class="myCard" name="card" id='<%= cardID(Deck.img[i]) %>' type="submit" value="<%= cardID(Deck.img[i]) %>"><img class="cardFront" src="/images/<%= Deck.img[i] %>"></button>
+      <% } %>
+    </form>
+  </div>
   <% include partials/footer %>
 </body>
 </main>

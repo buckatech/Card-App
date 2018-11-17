@@ -21,7 +21,8 @@
     "knex": "^0.15.2",
     "morgan": "^1.9.1",
     "path": "^0.12.7",
-    "prompt": "^1.0.0"
+    "prompt": "^1.0.0",
+    "sass": "^1.15.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.6"
