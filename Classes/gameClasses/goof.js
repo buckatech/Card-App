@@ -8,10 +8,10 @@ module.exports = class GoofSpiel {
     this.currentState = 0;
     this.playerOneScore = 0;
     this.playerTwoScore = 0;
-    this.activeCard = new Deck(['H'], values).shuffle()
+    this.activeCard = new Deck(['C'], values).shuffle()
     this.discard = new Deck;
-    this.P1Hand = new Deck(['S'], values)
-    this.P2Hand = new Deck(['C'], values)
+    this.P1Hand = new Deck(['H'], values)
+    this.P2Hand = new Deck(['S'], values)
   }
   playerScored(player, inputValue) {
     if (player === 0) {

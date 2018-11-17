@@ -23,9 +23,23 @@ exports.render_game_goof = (req, res) => {
 };
 
 exports.post_game_goof = (req, res) => {
-  let drawIndex = goofSpiel.P1Hand.Images.indexOf(`${req.body.card}.png`)
+  if (goofSpiel.currentState === 0) {
+    let drawIndex = goofSpiel.P1Hand.Images.indexOf(`${req.body.card}.png`)
     goofSpiel.shiftTo(goofSpiel.P1Hand, drawIndex)
+    console.log(goofSpiel.currentState)
+    goofSpiel.currentState = 1
   res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images })
+  } else if (goofSpiel.currentState === 1){
+    console.log('1 fired')
+    let drawIndex = goofSpiel.P2Hand.Images.indexOf(`${req.body.card}.png`)
+    goofSpiel.shiftTo(goofSpiel.P2Hand, drawIndex)
+    console.log(goofSpiel.currentState)
+    goofSpiel.currentState = 0
+  res.render("goofSpiel", { Deck: goofSpiel.P2Hand.Images })
+  } else {
+    res.send('borked')
+  }
+
 };
 
 // const turn = (bet1, bet2) => {
