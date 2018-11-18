@@ -19,6 +19,7 @@ exports.render_homepage = (req, res) => {
   res.render("index");
 };
 exports.render_game_goof = (req, res) => {
+  console.log(goofSpiel)
   if (goofSpiel.currentState === 0) {
     res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images });
   } else if (goofSpiel.currentState === 1){
