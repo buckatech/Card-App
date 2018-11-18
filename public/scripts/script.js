@@ -1,3 +1,4 @@
+
 /*
 $(document).ready(function () {
   event.preventDefault()
@@ -8,5 +9,21 @@ $(document).ready(function () {
       $({ id: id})
     });
 });
-});
-*/
+// });
+// */
+
+// $(document).ready(function () {
+//   $('#register').click(function () {
+//     console.log($('.email')[0].value);
+//     let insertValue = {
+//       email: $('.email')[0].value,
+//       password: $('.email')[1].value
+//     };
+//     knex('users')
+//       .insert(insertValue)
+//       .into("users")
+//       .finally(function() {
+//         knex.destroy();
+//       });
+//   });
+// });

@@ -11,12 +11,7 @@ module.exports = {
       database: "cardgame",
       charset: "utf8"
     }
-  }
-      database: "bubbles",
-      charset: "utf8"
-    }
   },
-
   staging: {
     client: 'pg',
     connection: {

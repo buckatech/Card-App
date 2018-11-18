@@ -8,10 +8,11 @@ router.get('/', indexController.render_homepage);
 router.get('/goofSpiel', indexController.render_game_goof);
 // Post to goofSpiel
 router.post('/goofSpiel', indexController.post_game_goof);
-// // Post to login
+
+//  Post to login
 // router.post('/login', indexController.post_login);
 // // Post to register
-// router.post('/register', indexController.post_register);
+router.post('/register', indexController.post_register);
 // // Post to logout
 // router.post('/logout', indexController.post_logout);
 

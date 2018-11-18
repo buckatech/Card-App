@@ -4,7 +4,7 @@ const Deck = require("../Classes/deck");
 const Card = require("../Classes/card")
 const GoofSpiel = require("../Classes/gameClasses/goof");
 const prompt = require("prompt");
-
+const knex = require("knex");
 // New GoofSpiel class to manage GoofSpiel specific logic
 let goofSpiel = new GoofSpiel();
 
@@ -22,7 +22,7 @@ exports.render_game_goof = (req, res) => {
   console.log(goofSpiel, 'GET FIRED')
   if (goofSpiel.currentState === 0) {
     res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images });
-    
+
   } else if (goofSpiel.currentState === 1){
     res.render("goofSpiel", { Deck: goofSpiel.P2Hand.Images })
   } else {
@@ -64,3 +64,22 @@ exports.post_game_goof = (req, res) => {
 //     //discardShift(goofSpiel, P1Deck, bet1, P2Deck, bet2);
 //     discardShift(firstImg, secondImg);
 //   }
+
+//user registration
+exports.post_register = (req, res) => {
+  let email = 0;
+  let password = req.body.password;
+  if (email && password) {
+    let insertValue = {
+      email: email,
+      password: password
+    };
+    knex("users")
+      .insert(insertValue)
+      .into("users")
+      .finally(function() {
+        knex.destroy();
+      });
+  }
+  res.redirect('/');
+};
