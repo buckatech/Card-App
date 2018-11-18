@@ -19,16 +19,13 @@ exports.render_homepage = (req, res) => {
   res.render("index");
 };
 exports.render_game_goof = (req, res) => {
-  console.log(goofSpiel, 'GET FIRED')
   if (goofSpiel.currentState === 0) {
     res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images });
-    
   } else if (goofSpiel.currentState === 1){
-    res.render("goofSpiel", { Deck: goofSpiel.P2Hand.Images })
+    res.render("goofSpiel", { Deck: goofSpiel.P2Hand.Images });
   } else {
     res.send('borked')
   }
-    //{ Deck: goofSpiel.P2Hand.Images }
 };
 
 exports.post_game_goof = (req, res) => {
