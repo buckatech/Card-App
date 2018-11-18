@@ -19,7 +19,6 @@ exports.render_homepage = (req, res) => {
   res.render("index");
 };
 exports.render_game_goof = (req, res) => {
-  console.log(goofSpiel, 'GET FIRED')
   if (goofSpiel.currentState === 0) {
     res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images });
 
@@ -67,6 +66,7 @@ exports.post_game_goof = (req, res) => {
 
 //user registration
 exports.post_register = (req, res) => {
+  console.log(req.body)
   let email = 0;
   let password = req.body.password;
   if (email && password) {
