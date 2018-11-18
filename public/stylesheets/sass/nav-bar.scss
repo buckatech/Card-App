@@ -21,7 +21,7 @@
   color: black;
   background-color: #aa0101;
   border-color: black;
-  margin: 1rem;
+  margin: .5rem;
   height: 85%;
   width: 8.5rem;
   font-size: 1.5rem;
@@ -35,4 +35,26 @@
 .btn-outline-primary:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+
+#saved {
+  float:right;
+  width: 11rem;
+  background-color: #aa0101;
+  color: black;
+  border-color: black;
+  height: 85%;
+  font-size: 1.5rem;
+  margin:.5rem;
+}
+
+#home {
+    float:right;
+  width: 9rem;
+  background-color: #aa0101;
+  color: black;
+  margin: .5rem;
+  border-color: black;
+  height: 3.4rem;
+  font-size: 1.5rem;
 }

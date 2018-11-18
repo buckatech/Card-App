@@ -7,7 +7,7 @@ const cookieSession = require('cookie-session');
 
 
 // Set port 8080
-const PORT = 8000;
+const PORT = 8080;
 
 // Router Imports
 const indexRouter = require('./routes/index');

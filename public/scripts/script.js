@@ -12,3 +12,10 @@ $(document).ready(function () {
   });
 
 });
+
+
+// $(document).ready(function () {
+//   if (window.location.href.indexOf("/") > 0) {
+//     $('#home').hide();
+//   }
+// });

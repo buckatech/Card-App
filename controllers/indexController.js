@@ -13,7 +13,12 @@ const prompt = require("prompt");
  */
 exports.render_homepage = (req, res) => {
   res.render('index');
-}
+};
+
+exports.render_savegames = (req, res) => {
+  res.render('savegames');
+};
+
 exports.render_game_goof = (req, res) => {
   let deck = {
     cards:
