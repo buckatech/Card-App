@@ -11,6 +11,9 @@ router.get('/goofSpiel', indexController.render_game_goof);
 // Post to goofSpiel
 router.post('/goofSpiel', indexController.post_game_goof);
 // // Post to login
+router.get('/login', (req, res) => {
+  console.log(req.body);
+});
 //router.get('/gofish', indexController.render_game_gofish);
 // router.post('/login', indexController.post_login);
 // // Post to register
