@@ -34,7 +34,7 @@ app.use('/', indexRouter);
 
 // Connect to default port
 app.listen(PORT, () => {
-  console.log(`App spining up on port ${PORT}!`);
+  console.log(`App spinning up on port ${PORT}!`);
 });
 
 module.exports = app;

@@ -1,5 +1,87 @@
 <% include partials/head %>
-  <% include partials/header %>
+    <html>
+    <nav class="navbar navbar-custom">
+      <a class="navbar-brand" href="#">
+        <span class="navbar-text">Card Game App</span></a>
+      <button id="btn" type="button" class="btn btn-info ml-auto" data-toggle="modal" data-target="#Login">Login</button>
+      <button id="btn" type="button" class="btn btn-info" data-toggle="modal" data-target="#registration">Register</button>
+      <button id="saved" type="button" class="btn btn-lg" data-toggle="modal" data-target="#savedGames">Game History</button>
+      <div id="Login" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div id="Login" class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Login</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <label for="email">Email:</label>
+              <input class="email" type="email" placeholder="example@example.com">
+              <label for="password">Password:</label>
+              <input class="password" type="password" placeholder="Password">
+            </div>
+            <div class="modal-footer">
+              <button id="Login" type="button" class="btn btn-default" data-dismiss="modal">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="registration" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div id="registration" class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Registration</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <label for="email">Email:</label>
+              <input class="email" type="email" placeholder="example@example.com">
+              <label for="password">Password:</label>
+              <input class="password" type="password" placeholder="Password">
+            </div>
+            <div class="modal-footer">
+              <button id="registration" type="button" class="btn btn-default" data-dismiss="modal">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="savedGames" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div id="savedGames" class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">History</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+              <li>placeholder</li>
+            </div>
+            <div class="modal-footer">
+              <form method="get" action="/">
+                <input id="home" type="submit" value="Homepage">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    </html>
   <div id="gameCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#gameCarousel" data-slide-to="0" class="active"></li>

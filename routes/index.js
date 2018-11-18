@@ -4,6 +4,8 @@ const indexController = require('../controllers/indexController');
 
 // Get home page
 router.get('/', indexController.render_homepage);
+// Get saved games page
+router.get('/savedgames', indexController.render_savegames);
 // Get goofSpiel
 router.get('/goofSpiel', indexController.render_game_goof);
 // Post to goofSpiel

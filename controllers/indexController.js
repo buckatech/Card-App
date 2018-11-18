@@ -16,8 +16,13 @@ let goofSpiel = new GoofSpiel();
  * Sends 'Index' via get req
  */
 exports.render_homepage = (req, res) => {
-  res.render("index");
+  res.render('index');
 };
+
+exports.render_savegames = (req, res) => {
+  res.render('savegames');
+};
+
 exports.render_game_goof = (req, res) => {
   console.log(goofSpiel)
   if (goofSpiel.currentState === 0) {
