@@ -40,12 +40,6 @@ exports.render_savegames = (req, res) => {
 
 exports.render_game_goof = (req, res) => {
   if (goofSpiel.currentState === 0) {
-<<<<<<< HEAD
-    res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images });
-
-  } else if (goofSpiel.currentState === 1){
-    res.render("goofSpiel", { Deck: goofSpiel.P2Hand.Images })
-=======
     res.render("goofSpiel", {
       Deck: goofSpiel.P1Hand.Images,
       Prize: goofSpiel.activeCard.Images[0],
@@ -61,7 +55,6 @@ exports.render_game_goof = (req, res) => {
       p1Score: goofSpiel.playerOneScore,
       p2Score: goofSpiel.playerTwoScore
     });
->>>>>>> 683caa698c6fe89e0d48326f0859625d19d5dc40
   } else {
     res.send('borked')
   }
