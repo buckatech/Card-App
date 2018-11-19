@@ -24,7 +24,6 @@ exports.render_savegames = (req, res) => {
 };
 
 exports.render_game_goof = (req, res) => {
-  console.log(goofSpiel)
   if (goofSpiel.currentState === 0) {
     res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images });
   } else if (goofSpiel.currentState === 1){
@@ -48,5 +47,4 @@ exports.post_game_goof = (req, res) => {
   } else {
     res.send('borked')
   }
-
 };

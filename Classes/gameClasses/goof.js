@@ -20,6 +20,24 @@ module.exports = class GoofSpiel {
       this.playerTwoScore += inputValue
     }
   }
+  insertData() {
+    let outObj = {}
+    Object.keys(this).forEach(element => {
+      if (typeof this[element] === 'object') {
+        outObj[element] = this[element].Values.join('|')
+      } else {
+        outObj[element] = this[element]
+      }
+    });
+    return outObj
+    }
+  /*
+  {
+    email: 'example123@example123.com',
+    password: 'example123Pass',
+    game_id: 2
+  },
+  */
   discardCard(targetDeck, cardIndex) {
     this.discard.cards.push((targetDeck.splice(cardIndex, 1)))
   }
