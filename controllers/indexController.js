@@ -7,10 +7,23 @@ const serve = require("../server/server");
 const prompt = require("prompt");
 const knex = require('../server/knex/knex.js');
 
-
+exports.set_data = (req, res, next) => {
+  knex('game').select('*').first()
+  .then((game) => {
+    data = game
+  })
+  .catch((err) => {
+    res.status(500).json({
+      status: 'error',
+      data: err
+    });
+  });
+  next()
+}
 
 // New GoofSpiel class to manage GoofSpiel specific logic
 let goofSpiel = new GoofSpiel();
+
 
 /**
  *
@@ -22,22 +35,6 @@ let goofSpiel = new GoofSpiel();
 exports.render_homepage = (req, res) => {
   res.render('index');
 };
-
-exports.test_page = (req, res) => {
-  knex('userdb').select('*')
-  .then((userdb) => {
-    console.log(userdb)
-    res.status(200).json({
-      data: userdb
-    });
-  })
-  .catch((err) => {
-    res.status(500).json({
-      status: 'error',
-      data: err
-    });
-  });
-}
 
 exports.render_savegames = (req, res) => {
   res.render('savegames');
@@ -54,6 +51,7 @@ exports.render_game_goof = (req, res) => {
 };
 
 exports.post_game_goof = (req, res) => {
+  console.log(data)
   if (goofSpiel.currentState === 0) {
     let drawIndex = goofSpiel.P1Hand.Images.indexOf(`${req.body.card}.png`)
     goofSpiel.discardCard(goofSpiel.P1Hand.cards, drawIndex)
