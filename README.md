@@ -13,10 +13,6 @@ created by Alex and Taylor
 ### design
 * sass was used for the design of each individual page, allowing for modularity of design
 * bootstrap 4 implimented to allow for easier rendering of page design
-### final product
-!["Screenshot of homepage"](public/images/homepage.png)
-
-!["Screenshot of Goofspiel game page"](public/images/goofspielgame.png)
 
 ### Dependencies
 * Node.js
