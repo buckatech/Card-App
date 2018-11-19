@@ -24,11 +24,24 @@ exports.render_savegames = (req, res) => {
 };
 
 exports.render_game_goof = (req, res) => {
-  console.log(goofSpiel)
+  //console.log(goofSpiel)
   if (goofSpiel.currentState === 0) {
-    res.render("goofSpiel", { Deck: goofSpiel.P1Hand.Images });
+    console.log(goofSpiel)
+    res.render("goofSpiel", {
+      Deck: goofSpiel.P1Hand.Images,
+      Prize: goofSpiel.activeCard.Images[0],
+      turn: goofSpiel.currentState,
+      p1Score: goofSpiel.playerOneScore,
+      p2Score: goofSpiel.playerTwoScore
+    });
   } else if (goofSpiel.currentState === 1){
-    res.render("goofSpiel", { Deck: goofSpiel.P2Hand.Images });
+    res.render("goofSpiel", {
+      Deck: goofSpiel.P2Hand.Images,
+      Prize: goofSpiel.activeCard.Images[0],
+      turn: goofSpiel.currentState,
+      p1Score: goofSpiel.playerOneScore,
+      p2Score: goofSpiel.playerTwoScore
+    });
   } else {
     res.send('borked')
   }
@@ -43,6 +56,8 @@ exports.post_game_goof = (req, res) => {
   } else if (goofSpiel.currentState === 1){
     let drawIndex = goofSpiel.P2Hand.Images.indexOf(`${req.body.card}.png`)
     goofSpiel.discardCard(goofSpiel.P2Hand.cards, drawIndex)
+    goofSpiel.discardCard(goofSpiel.activeCard.cards, 0)
+
     goofSpiel.currentState = 0
     res.redirect('/goofSpiel')
   } else {
