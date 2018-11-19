@@ -22,14 +22,6 @@ router.post('/register', (req, res) => {
   res.end();
 });
 
-let testData = { id: 1, email: 'hi2@hi2.com', password: 'hiPass2', game_id: 1 };
-
-router.get('/dataTest', (req, res) => {
-  console.log(testData);
-  res.send(testData);
-  res.render('/dataTest');
-});
-
 //router.get('/gofish', indexController.render_game_gofish);
 // router.post('/login', indexController.post_login);
 // // Post to register
