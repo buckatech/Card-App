@@ -65,3 +65,7 @@ exports.post_game_goof = (req, res) => {
   }
 
 };
+
+exports.post_data = (req, res) => {
+  console.log(req.body);
+};

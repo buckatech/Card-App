@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const indexController = require('../controllers/indexController');
-const databaseController = require('../controllers/databaseController');
 
 // Get home page
 router.get('/', indexController.render_homepage);
@@ -23,7 +22,14 @@ router.post('/register', (req, res) => {
   res.end();
 });
 
-router.post('/register', databaseController.checkEmail);
+let testData = { id: 1, email: 'hi2@hi2.com', password: 'hiPass2', game_id: 1 };
+
+router.get('/dataTest', (req, res) => {
+  console.log(testData);
+  res.send(testData);
+  res.render('/dataTest');
+});
+
 //router.get('/gofish', indexController.render_game_gofish);
 // router.post('/login', indexController.post_login);
 // // Post to register
