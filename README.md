@@ -16,7 +16,7 @@ created by Alex and Taylor
 ### final product
 !["Screenshot of homepage"](public/images/homepage.png)
 
-!["Screenshot of Goofspiel game page"](public/images/goofspielgame.png)
+!["Screenshot of Goofspiel game page"](public/images/goofspielGame.png)
 
 ### Dependencies
 * Node.js
