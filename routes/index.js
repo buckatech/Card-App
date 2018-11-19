@@ -16,7 +16,7 @@ router.post('/goofSpiel', indexController.post_game_goof);
 //router.get('/gofish', indexController.render_game_gofish);
 // router.post('/login', indexController.post_login);
 // // Post to register
-// router.post('/register', indexController.post_register);
+router.post('/register', indexController.post_register);
 // // Post to logout
 // router.post('/logout', indexController.post_logout);
 

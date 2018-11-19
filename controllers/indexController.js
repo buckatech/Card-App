@@ -47,7 +47,7 @@ exports.render_game_goof = (req, res) => {
       p1Score: goofSpiel.playerOneScore,
       p2Score: goofSpiel.playerTwoScore
     });
-  } else if (goofSpiel.currentState === 1){   
+  } else if (goofSpiel.currentState === 1){
     res.render("goofSpiel", {
       Deck: goofSpiel.P2Hand.Images,
       Prize: goofSpiel.activeCard.Images[0],
@@ -56,7 +56,7 @@ exports.render_game_goof = (req, res) => {
       p2Score: goofSpiel.playerTwoScore
     });
   } else {
-    res.send('borked')
+    res.send('err')
   }
 };
 
@@ -64,6 +64,7 @@ exports.post_game_goof = (req, res) => {
   if (goofSpiel.currentState === 0) {
     let drawIndex = goofSpiel.P1Hand.Images.indexOf(`${req.body.card}.png`)
     goofSpiel.discardCard(goofSpiel.P1Hand.cards, drawIndex)
+    goofSpiel.currentBet = drawIndex + 1
     goofSpiel.currentState = 1
     knex('game').first().update(goofSpiel.insertData())
       .then(() => {
@@ -71,8 +72,15 @@ exports.post_game_goof = (req, res) => {
       })
   } else if (goofSpiel.currentState === 1){
     let drawIndex = goofSpiel.P2Hand.Images.indexOf(`${req.body.card}.png`)
+    let scoreVal = goofSpiel.activeCard.cards[0].Value
+    if (drawIndex + 1 > goofSpiel.currentBet) {
+      goofSpiel.playerTwoScore += scoreVal+1
+    } else {
+      goofSpiel.playerOneScore += scoreVal+1
+
+    }
     goofSpiel.discardCard(goofSpiel.P2Hand.cards, drawIndex)
-    goofSpiel.discardCard(goofSpiel.activeCard.cards, 0)
+    goofSpiel.discardCard(goofSpiel.activeCard.cards, 0)    
     goofSpiel.currentState = 0
     knex('game').first().update(goofSpiel.insertData())
     .then(() => {
@@ -86,3 +94,7 @@ exports.post_game_goof = (req, res) => {
 exports.post_data = (req, res) => {
   console.log(req.body);
 };
+
+exports.post_register = (req, res) => {
+  res.redirect('/goofSpiel')
+}
