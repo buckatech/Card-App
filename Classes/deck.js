@@ -1,6 +1,5 @@
 const Card = require('./card')
 const classHelp = require('../helpers/classHelper')
-const removeFromValues = classHelp.removeFromValues
 /** Class representing a Deck */
 module.exports = class Deck {
   constructor(suits, values) {
