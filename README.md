@@ -19,9 +19,9 @@
   * bootstrap 4 implimented to allow for easier rendering of page design
 ## final product
 
-!["Screenshot of homepage"](mainpage.png)
+!["Screenshot of homepage"](public/images/mainpage.png)
 
-!["Screenshot of Goofspiel game page"](goofspielGamePage.png)
+!["Screenshot of Goofspiel game page"](public/images/goofspielGamePage.png)
 
 ## Dependencies
 * Node.js
