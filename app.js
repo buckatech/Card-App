@@ -15,6 +15,7 @@ const indexRouter = require('./routes/index');
 // Creates an express application
 const app = express();
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -24,13 +25,20 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
-
+// use cookie session
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["gggw2"]
+  })
+);
 // Compress Routes
 app.use(compression());
 
 // Use Router
 
 app.use('/', indexRouter);
+
 
 // Connect to default port
 app.listen(PORT, () => {

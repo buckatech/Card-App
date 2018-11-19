@@ -1,8 +1,8 @@
 /* HEADER BUTTON */
 #btn {
   color: black;
-  background-color: #cecece;
-  border-color: black;
+  background-color: #eeebeb;
+  border-color: #8b8b8b;
   margin: 0.5rem;
   height: 80%;
   width: 8.5rem;
@@ -23,9 +23,9 @@
 
 #saved {
   width: 11rem;
-  background-color: #cecece;
+  background-color: #eeebeb;
   color: black;
-  border-color: black;
+  border-color: #8b8b8b;
   height: 80%;
   font-size: 1rem;
   margin: 0.5rem;
@@ -34,12 +34,12 @@
 #home {
   float: right;
   width: 9rem;
-  background-color: #cecece;
+  background-color: #eeebeb;
   color: black;
   margin: 0.5rem;
-  border-color: black;
+  border-color: #8b8b8b;
   height: 3.5rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-radius: 0.3rem;
 }
 

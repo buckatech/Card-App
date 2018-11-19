@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const indexController = require('../controllers/indexController');
-const insert = require('../server/serveHelper/insert')
+const insert = require('../server/serveHelper/insert');
 
 router.use(indexController.set_data)
 // Get home page
@@ -13,7 +13,11 @@ router.get('/goofSpiel', indexController.render_game_goof);
 // Post to goofSpiel
 router.post('/goofSpiel', indexController.post_game_goof);
 
-//router.get('/gofish', indexController.render_game_gofish);
+router.post('/register', indexController.register_user);
+
+router.post("/login", indexController.login_user);
+
+
 // router.post('/login', indexController.post_login);
 // // Post to register
 // router.post('/register', indexController.post_register);
