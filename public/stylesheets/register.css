@@ -9,12 +9,12 @@
   color: white;
   font-size: 2rem;
 }
-#registration .modal-body .email {
-  width: 17rem;
+#registration .modal-body #regEmail {
+  width: 16rem;
   margin-right: 9rem;
 }
-#registration .modal-body .password {
-  width: 15rem;
+#registration .modal-body #regPassword {
+  width: 14rem;
 }
 #registration .modal-footer {
   background-color: black;

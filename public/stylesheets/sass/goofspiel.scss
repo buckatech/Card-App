@@ -1,6 +1,6 @@
 /* Main Body */
 .goofspiel{
-  background-color: green;
+  background-color: rgb(17, 131, 17);
 }
 
 .myCard {
@@ -24,8 +24,6 @@
   border: 0rem;
   margin-left:-1.50rem;
   margin-right:-1.50rem;
-  margin-top: 6.25rem;
-  margin-bottom: 6.25rem;
   border-radius: 2.5rem;
   height: 7.25rem;
   width: 7.625rem;
@@ -33,9 +31,37 @@
 
 
 .playarea {
+  margin-top: -6rem;
   height: 13rem;
+  margin-bottom: -4rem;
 }
 
+#prize {
+  margin-top: -5rem;
+  border: 0rem;
+  border-radius: 2.5rem;
+  height: 7.25rem;
+  width: 7.625rem;
+}
 
+.players {
+  margin-bottom: -5rem;
+  .player1 {
+    font: arial, san-serif;
+    font-size: 1.5rem;
+  }
+  .player2 {
+    font: arial, san-serif;
+    font-size: 1.5rem;
+  }
+}
 
+#labelText {
+  margin-left: 37.5rem;
+}
 
+.playerScores {
+  float: right;
+  margin-right: 3rem;
+  margin-top: -2rem;
+}

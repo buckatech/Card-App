@@ -1,103 +1,26 @@
+<!DOCTYPE html>
+<html>
 <% include partials/head %>
-    <html>
-    <nav class="navbar navbar-custom">
-      <a class="navbar-brand" href="#">
-        <span class="navbar-text">Card Game App</span></a>
-      <button id="btn" type="button" class="btn btn-info ml-auto" data-toggle="modal" data-target="#Login">Login</button>
-      <button id="btn" type="button" class="btn btn-info" data-toggle="modal" data-target="#registration">Register</button>
-      <button id="saved" type="button" class="btn btn-lg" data-toggle="modal" data-target="#savedGames">Game History</button>
-      <div id="Login" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-          <!-- Modal content-->
-          <div id="Login" class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Login</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              <label for="email">Email:</label>
-              <input class="email" type="email" placeholder="example@example.com">
-              <label for="password">Password:</label>
-              <input class="password" type="password" placeholder="Password">
-            </div>
-            <div class="modal-footer">
-              <button id="Login" type="button" class="btn btn-default" data-dismiss="modal">Login</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="registration" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-          <!-- Modal content-->
-          <div id="registration" class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Registration</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              <label for="email">Email:</label>
-              <input class="email" type="email" placeholder="example@example.com">
-              <label for="password">Password:</label>
-              <input class="password" type="password" placeholder="Password">
-            </div>
-            <div class="modal-footer">
-              <button id="registration" type="button" class="btn btn-default" data-dismiss="modal">Register</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="savedGames" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-          <!-- Modal content-->
-          <div id="savedGames" class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">History</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              <li>placeholder</li>
-              <li>placeholder</li>
-              <li>placeholder</li>
-              <li>placeholder</li>
-              <li>placeholder</li>
-              <li>placeholder</li>
-              <li>placeholder</li>
-              <li>placeholder</li>
-              <li>placeholder</li>
-              <li>placeholder</li>
-            </div>
-            <div class="modal-footer">
-              <form method="get" action="/">
-                <input id="home" type="submit" value="Homepage">
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    </html>
+<header>
+  <% include partials/headerIndex %>
+</header>
+<body>
   <div id="gameCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#gameCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#gameCarousel" data-slide-to="1"></li>
     </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <form method="get" action="./goofSpiel">
-          <button class="goofspielGame d-block w-100" alt="First slide" type="submit"><img class="goofspiel" src='/images/goofspieliconfinal.jpg'></button>
-        </form>
-      </div>
-      <div class="carousel-item">
-        <form method="get" action="./gofish">
-          <button class="goofspielGame d-block w-100" alt="Second slide" type="submit"><img class="goFish" src='/images/goFish.jpg'></button>
-        </form>
-      </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <form method="get" action="./goofSpiel">
+        <button class="goofspielGame d-block w-100" alt="First slide" type="submit"><img class="goofspiel" src='/images/goofspieliconfinal.jpg'></button>
+      </form>
+    </div>
+    <div class="carousel-item">
+      <form method="get" action="./gofish">
+        <button class="goofspielGame d-block w-100" alt="Second slide" type="submit"><img class="goFish" src='/images/goFish.jpg'></button>
+      </form>
+    </div>
     <a class="carousel-control-prev" href="#gameCarousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -108,3 +31,5 @@
     </a>
   </div>
 <% include partials/footer %>
+</body>
+</html>

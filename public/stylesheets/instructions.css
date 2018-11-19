@@ -1,0 +1,16 @@
+#instructions .modal-header {
+  background-color: black;
+}
+#instructions .close {
+  color: white;
+}
+#instructions .modal-title {
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 2rem;
+}
+#instructions .modal-footer {
+  background-color: black;
+}
+
+/*# sourceMappingURL=instructions.css.map */
