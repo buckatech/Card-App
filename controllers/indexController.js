@@ -10,7 +10,10 @@ const knex = require('../server/knex/knex.js');
 exports.set_data = (req, res, next) => {
   knex('game').select('*').first()
   .then((game) => {
-    data = game
+    let goofSpiel = new GoofSpiel
+    goofSpiel.dbGoof = game
+    global.goofSpiel = goofSpiel
+    next()
   })
   .catch((err) => {
     res.status(500).json({
@@ -18,11 +21,7 @@ exports.set_data = (req, res, next) => {
       data: err
     });
   });
-  next()
 }
-
-// New GoofSpiel class to manage GoofSpiel specific logic
-let goofSpiel = new GoofSpiel();
 
 
 /**
@@ -32,8 +31,9 @@ let goofSpiel = new GoofSpiel();
  * @example User requests homepage
  * Sends 'Index' via get req
  */
-exports.render_homepage = (req, res) => {
-  res.render('index');
+exports.render_homepage = (req, res, next) => {
+  console.log(goofSpiel)
+  res.render('index')
 };
 
 exports.render_savegames = (req, res) => {
@@ -42,7 +42,7 @@ exports.render_savegames = (req, res) => {
 
 exports.render_game_goof = (req, res) => {
   if (goofSpiel.currentState === 0) {
-    console.log(goofSpiel)
+    console.log(goofSpiel, '2')
     res.render("goofSpiel", {
       Deck: goofSpiel.P1Hand.Images,
       Prize: goofSpiel.activeCard.Images[0],
@@ -51,6 +51,7 @@ exports.render_game_goof = (req, res) => {
       p2Score: goofSpiel.playerTwoScore
     });
   } else if (goofSpiel.currentState === 1){
+    console.log(goofSpiel, '3')    
     res.render("goofSpiel", {
       Deck: goofSpiel.P2Hand.Images,
       Prize: goofSpiel.activeCard.Images[0],
@@ -64,7 +65,6 @@ exports.render_game_goof = (req, res) => {
 };
 
 exports.post_game_goof = (req, res) => {
-  console.log(data)
   if (goofSpiel.currentState === 0) {
     let drawIndex = goofSpiel.P1Hand.Images.indexOf(`${req.body.card}.png`)
     goofSpiel.discardCard(goofSpiel.P1Hand.cards, drawIndex)

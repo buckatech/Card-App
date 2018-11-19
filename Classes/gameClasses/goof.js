@@ -6,6 +6,7 @@ module.exports = class GoofSpiel {
 
   constructor() {
     const values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    this.id = 1
     this.currentBet = 0
     this.currentState = 0;
     this.playerOneScore = parseInt(0);
@@ -14,6 +15,17 @@ module.exports = class GoofSpiel {
     this.discard = new Deck;
     this.P1Hand = new Deck(['H'], values)
     this.P2Hand = new Deck(['S'], values)
+  }
+  set dbGoof(dbData) {
+    this.id = 1
+    this.currentBet = dbData.currentBet
+    this.currentState = dbData.currentState
+    this.playerOneScore = dbData.playerOneScore
+    this.playerTwoScore = dbData.playerTwoScore
+    this.activeCard = new Deck(['C'], dbData.activeCard.split('|'))
+    this.discard = new Deck
+    this.P1Hand = new Deck(['H'], dbData.activeCard.split('|'))
+    this.P2Hand = new Deck(['S'], dbData.activeCard.split('|'))
   }
 
   playerScored(player, inputValue) {
