@@ -14,11 +14,6 @@ exports.seed = function(knex, Promise) {
         password: 'examplePass',
         game_id: 1
       },
-      {
-        email: 'example123@example123.com',
-        password: 'example123Pass',
-        game_id: 2
-      },
     ]);
   });
 };

@@ -3,31 +3,18 @@ exports.seed = function(knex, Promise) {
   return knex('game').del()
   .then(function () {
     // Inserts seed entries
-    return knex('game').insert([
-      {
+    return knex('game').insert(
+      { 
         id: 1,
-        game_name: 'DATAONE',
-        current_bet: '5C',
-        current_state: '1',
-        player_one_score: '16',
-        player_two_score: '28',
-        active_cards: '0|1|2|3|6|7',
-        discard: '1|2|5|6|7|2',
-        p_one_hand: '1|2|3|6|7',
-        p_two_hand: '3|4|8|9|0'
-      },
-      {
-        id: 2,
-        game_name: 'DATATWO',
-        current_bet: '5C',
-        current_state: '1',
-        player_one_score: '16',
-        player_two_score: '28',
-        active_cards: '0|1|2|3|6|7',
-        discard: '1|2|5|6|7|2',
-        p_one_hand: '1|2|3|6|7',
-        p_two_hand: '3|4|8|9|0'
-      },
-    ]);
+        currentBet: 0,
+        currentState: 0,
+        playerOneScore: 0,
+        playerTwoScore: 0,
+        activeCard: '1|0|6|4|10|11|5|12|3|8|9|7|2',
+        discard: '',
+        P1Hand: '0|1|2|3|4|5|6|7|8|9|10|11|12',
+        P2Hand: '0|1|2|3|4|5|6|7|8|9|10|11|12' 
+      }
+    );
   });
 };
