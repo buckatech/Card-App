@@ -19,7 +19,7 @@ router.post('/goofSpiel', indexController.post_game_goof);
 router.post('/register', indexController.post_register);
 // // Post to logout
 // router.post('/logout', indexController.post_logout);
-
+//
 /*TODO ERROR HANDLERS */
 
 // router.get('/loginErr', indexController.render_loginErr);
