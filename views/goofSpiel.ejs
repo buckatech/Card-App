@@ -5,7 +5,6 @@
     <% include partials/header %>
   </header>
   <main class="goofspiel">
-
     <body id="playArea">
       <!--function used to split the string src to retreive card id examples(0H, 2S)-->
       <% function cardID (fileName) {
@@ -18,7 +17,9 @@
         <img class="cardback" src="/images/cardback.png">
         <% } %>
       </div>
-      <div class="playarea"></div>
+      <div class="playarea">
+        <% include partials/goofspielInstructions %>
+      </div>
       <div class="player container mx-auto d-block">
         <form method="post" action="/goofSpiel">
           <% for(var i = 0; i < Deck.length; i++) { %>

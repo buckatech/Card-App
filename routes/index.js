@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const indexController = require('../controllers/indexController');
+const databaseController = require('../controllers/databaseController');
 
 // Get home page
 router.get('/', indexController.render_homepage);
@@ -11,9 +12,18 @@ router.get('/goofSpiel', indexController.render_game_goof);
 // Post to goofSpiel
 router.post('/goofSpiel', indexController.post_game_goof);
 // // Post to login
-router.get('/login', (req, res) => {
+router.post('/login', (req, res) => {
   console.log(req.body);
+  res.redirect('/');
+  res.end();
 });
+
+router.post('/register', (req, res) => {
+  res.redirect('/');
+  res.end();
+});
+
+router.post('/register', databaseController.checkEmail);
 //router.get('/gofish', indexController.render_game_gofish);
 // router.post('/login', indexController.post_login);
 // // Post to register
