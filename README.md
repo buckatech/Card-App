@@ -19,9 +19,9 @@
   * bootstrap 4 implimented to allow for easier rendering of page design
 ## final product
 
-!["Screenshot of homepage"]('/Users/taylorcameron/lighthouse/lighthouseAssignments/Week_4/Card-App/public/images/mainpage.png')
+!["Screenshot of homepage"](mainpage.png)
 
-!["Screenshot of Goofspiel game page"]('/Users/taylorcameron/lighthouse/lighthouseAssignments/Week_4/Card-App/public/images/goofspielGamePage.png')
+!["Screenshot of Goofspiel game page"](goofspielGamePage.png)
 
 ## Dependencies
 * Node.js
