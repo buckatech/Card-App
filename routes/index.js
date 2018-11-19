@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const indexController = require('../controllers/indexController');
+const insert = require('../server/serveHelper/insert')
+
 
 // Get home page
 router.get('/', indexController.render_homepage);
@@ -11,6 +13,7 @@ router.get('/goofSpiel', indexController.render_game_goof);
 // Post to goofSpiel
 router.post('/goofSpiel', indexController.post_game_goof);
 // // Post to login
+router.get('/test', indexController.test_page);
 //router.get('/gofish', indexController.render_game_gofish);
 // router.post('/login', indexController.post_login);
 // // Post to register

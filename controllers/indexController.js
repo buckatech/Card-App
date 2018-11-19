@@ -3,7 +3,11 @@ const router = express.Router();
 const Deck = require("../Classes/deck");
 const Card = require("../Classes/card")
 const GoofSpiel = require("../Classes/gameClasses/goof");
+const serve = require("../server/server");
 const prompt = require("prompt");
+const knex = require('../server/knex/knex.js');
+
+
 
 // New GoofSpiel class to manage GoofSpiel specific logic
 let goofSpiel = new GoofSpiel();
@@ -18,6 +22,22 @@ let goofSpiel = new GoofSpiel();
 exports.render_homepage = (req, res) => {
   res.render('index');
 };
+
+exports.test_page = (req, res) => {
+  knex('userdb').select('*')
+  .then((userdb) => {
+    console.log(userdb)
+    res.status(200).json({
+      data: userdb
+    });
+  })
+  .catch((err) => {
+    res.status(500).json({
+      status: 'error',
+      data: err
+    });
+  });
+}
 
 exports.render_savegames = (req, res) => {
   res.render('savegames');

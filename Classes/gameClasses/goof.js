@@ -1,4 +1,6 @@
 const Deck = require("../deck");
+const serv = require('../../server/server')
+
 
 module.exports = class GoofSpiel {
   
@@ -13,6 +15,7 @@ module.exports = class GoofSpiel {
     this.P1Hand = new Deck(['H'], values)
     this.P2Hand = new Deck(['S'], values)
   }
+
   playerScored(player, inputValue) {
     if (player === 0) {
       this.playerOneScore += inputValue
@@ -31,6 +34,7 @@ module.exports = class GoofSpiel {
     });
     return outObj
     }
+    
   /*
   {
     email: 'example123@example123.com',
