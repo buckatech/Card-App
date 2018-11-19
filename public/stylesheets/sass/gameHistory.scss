@@ -1,24 +1,18 @@
-#registration {
+#savedGames {
   .modal-header {
     background-color: black;
   }
+
   .close {
     color: white;
   }
+
   .modal-title {
     font-family: Arial, sans-serif;
     color: white;
     font-size: 2rem;
   }
-  .modal-body {
-    #regEmail {
-      width:16rem;
-      margin-right:9rem;
-    }
-    #regPassword {
-      width:14rem;
-    }
-  }
+
   .modal-footer {
     background-color: black;
   }

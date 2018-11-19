@@ -1,28 +1,48 @@
-<% include partials/head %>
-<main class="goofspiel">
-<body id="playArea">
-  <% include partials/header %>
-<!--function used to split the string src to retreive card id examples(0H, 2S)-->
-  <% function cardID (fileName) {
-    let fileArray = fileName.split(".");
-    return fileArray[0];
-  } %>
-  <h1 class="text-center">Goofspiel!!</h1>
-  <div class="opponent container mx-auto d-block">
-    <% for(var i = 0; i < Deck.length; i++) { %>
-    <img class="cardback" src="/images/cardback.png">
-    <% } %>
-  </div>
-  <div class="playarea"></div>
-  <div class="player container mx-auto d-block">
-    <form method="post" action="/goofSpiel">
-      <% for(var i = 0; i < Deck.length; i++) { %>
-      <button class="myCard" name="card" id='<%= cardID(Deck[i]) %>' type="submit" value="<%= cardID(Deck[i]) %>"><img class="cardFront" src="/images/<%= Deck[i] %>"></button>
-      <% } %>
-    </form>
-  </div>
-  <% include partials/footer %>
-</body>
-</main>
+<!DOCTYPE html>
+<html>
+  <% include partials/head %>
+  <header>
+    <% include partials/header %>
+  </header>
+  <main class="goofspiel">
+    <body id="playArea">
+      <!--function used to split the string src to retreive card id examples(0H, 2S)-->
+      <% function cardID (fileName) {
+      let fileArray = fileName.split(".");
+      return fileArray[0];
+    } %>
+      <h1 class="text-center">Goofspiel</h1>
+      <div class="playerScores">
+        <p id="p1Score">Player 1 Score: <%= p1Score %> </p>
+        <p id="p2Score">Player 2 Score: <%= p2Score %></p>
+      </div>
+      <div class='players container mx-auto d-block'>
+        <% if(turn === 0) { %>
+        <p class="player1">Player One's Turn</p>
+        <% } else { %>
+        <p class="player2">Player Two's Turn</p>
+        <% } %>
+      </div>
+      <div class="opponent container mx-auto d-block">
+        <% for(var i = 0; i < Deck.length; i++) { %>
+        <img class="cardback" src="/images/cardback.png">
+        <% } %>
+      </div>
+      <img id="prize" class="cardback mx-auto d-block" src="/images/cardback.png">
+      <div class="playarea mx-auto d-block">
+        <label for="label" id="labelText">Prize Card</label>
+        <img id="label" class="cardFront mx-auto d-block" src="/images/<%= Prize %>">
+        <% include partials/instructions %>
+      </div>
+      <div class="player container mx-auto d-block">
+        <form method="post" action="/goofSpiel">
+          <% for(var i = 0; i < Deck.length; i++) { %>
+          <button class="myCard" name="card" id='<%= cardID(Deck[i]) %>' type="submit" value="<%= cardID(Deck[i]) %>"><img
+              class="cardFront" src="/images/<%= Deck[i] %>"></button>
+          <% } %>
+        </form>
+      </div>
+      <% include partials/footer %>
+    </body>
+  </main>
 </html>
-

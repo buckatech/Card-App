@@ -5,7 +5,7 @@ module.exports = class Card {
   }
   set aCard(SuitVal) {
     this.suit = SuitVal.replace(/\d/g,'').toUpperCase();
-    this.val = SuitVal.replace(/[a-zA-Z]/g, '')
+    this.val = parseInt(SuitVal.replace(/[a-zA-Z]/g, ''))
   }
   get SuitValue() {
     return `${this.val}${this.suit}`

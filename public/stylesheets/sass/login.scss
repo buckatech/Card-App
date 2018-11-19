@@ -11,12 +11,12 @@
     font-size: 2rem;
   }
   .modal-body {
-    .email {
-      width:17rem;
+    #loginEmail {
+      width:16rem;
       margin-right:9rem;
     }
-    .password {
-      width:15rem;
+    #loginPassword {
+      width:14rem;
     }
   }
   .modal-footer {

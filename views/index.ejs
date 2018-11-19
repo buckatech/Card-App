@@ -1,21 +1,26 @@
+<!DOCTYPE html>
+<html>
 <% include partials/head %>
-  <% include partials/header %>
+<header>
+  <% include partials/headerIndex %>
+</header>
+<body>
   <div id="gameCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#gameCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#gameCarousel" data-slide-to="1"></li>
     </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <form method="get" action="./goofSpiel">
-          <button class="goofspielGame d-block w-100" alt="First slide" type="submit"><img class="goofspiel" src='/images/goofspieliconfinal.jpg'></button>
-        </form>
-      </div>
-      <div class="carousel-item">
-        <form method="get" action="./gofish">
-          <button class="goofspielGame d-block w-100" alt="Second slide" type="submit"><img class="goFish" src='/images/goFish.jpg'></button>
-        </form>
-      </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <form method="get" action="./goofSpiel">
+        <button class="goofspielGame d-block w-100" alt="First slide" type="submit"><img class="goofspiel" src='/images/goofspieliconfinal.jpg'></button>
+      </form>
+    </div>
+    <div class="carousel-item">
+      <form method="get" action="./gofish">
+        <button class="goofspielGame d-block w-100" alt="Second slide" type="submit"><img class="goFish" src='/images/goFish.jpg'></button>
+      </form>
+    </div>
     <a class="carousel-control-prev" href="#gameCarousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -26,3 +31,5 @@
     </a>
   </div>
 <% include partials/footer %>
+</body>
+</html>

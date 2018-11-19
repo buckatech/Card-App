@@ -1,30 +1,13 @@
-/* HEADER BAR */
-.navbar-custom{
-  background-color: black;
-  height: 5rem;
-  padding: 0.25rem 2rem;
-}
-.navbar-text{
-  color:white;
-  padding-left: 0.75rem;
-  font-size: 2rem;
-}
-.headImg{
-  height: 5rem;
-  width: 5rem;
-}
-.headerRow{
-  height: 3rem;
-}
+
 /* HEADER BUTTON */
 #btn{
   color: black;
-  background-color: #aa0101;
+  background-color: #cecece;
   border-color: black;
-  margin: 1rem;
-  height: 85%;
+  margin: .5rem;
+  height: 80%;
   width: 8.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 /* importants are used to override bootstrap defualt behaviors */
 .btn-info:hover, .btn-outline-primary:active {
@@ -35,4 +18,26 @@
 .btn-outline-primary:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+
+#saved {
+  width: 11rem;
+  background-color: #cecece;
+  color: black;
+  border-color: black;
+  height: 80%;
+  font-size: 1rem;
+  margin:.5rem;
+}
+
+#home {
+    float:right;
+  width: 9rem;
+  background-color: #cecece;
+  color: black;
+  margin: .5rem;
+  border-color: black;
+  height: 3.5rem;
+  font-size: 1.5rem;
+  border-radius: .30rem;
 }

@@ -9,12 +9,12 @@
   color: white;
   font-size: 2rem;
 }
-#Login .modal-body .email {
-  width: 17rem;
+#Login .modal-body #loginEmail {
+  width: 16rem;
   margin-right: 9rem;
 }
-#Login .modal-body .password {
-  width: 15rem;
+#Login .modal-body #loginPassword {
+  width: 14rem;
 }
 #Login .modal-footer {
   background-color: black;

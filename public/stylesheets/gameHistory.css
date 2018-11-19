@@ -1,0 +1,16 @@
+#savedGames .modal-header {
+  background-color: black;
+}
+#savedGames .close {
+  color: white;
+}
+#savedGames .modal-title {
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 2rem;
+}
+#savedGames .modal-footer {
+  background-color: black;
+}
+
+/*# sourceMappingURL=gameHistory.css.map */

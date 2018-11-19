@@ -1,17 +1,31 @@
 const Deck = require("../deck");
+const serv = require('../../server/server')
+
 
 module.exports = class GoofSpiel {
-  
+
   constructor() {
     const values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    this.id = 1
     this.currentBet = 0
     this.currentState = 0;
-    this.playerOneScore = 0;
+    this.playerOneScore = parseInt(0);
     this.playerTwoScore = 0;
     this.activeCard = new Deck(['C'], values).shuffle()
     this.discard = new Deck;
     this.P1Hand = new Deck(['H'], values)
     this.P2Hand = new Deck(['S'], values)
+  }
+  set dbGoof(dbData) {
+    this.id = 1
+    this.currentBet = parseInt(dbData.currentBet)
+    this.currentState = parseInt(dbData.currentState)
+    this.playerOneScore = parseInt(dbData.playerOneScore)
+    this.playerTwoScore = parseInt(dbData.playerTwoScore)
+    this.activeCard = new Deck(['C'], dbData.activeCard.split('|'))
+    this.discard = new Deck
+    this.P1Hand = new Deck(['H'], dbData.P1Hand.split('|'))
+    this.P2Hand = new Deck(['S'], dbData.P2Hand.split('|'))
   }
   playerScored(player, inputValue) {
     if (player === 0) {
@@ -20,6 +34,26 @@ module.exports = class GoofSpiel {
       this.playerTwoScore += inputValue
     }
   }
+  insertData() {
+    let outObj = {}
+    Object.keys(this).forEach(element => {
+      if (typeof this[element] === 'object') {
+        outObj[element] = this[element].Values.join('|')
+      } else {
+        outObj[element] = this[element]
+      }
+    });
+    return outObj
+    }
+    
+
+  /*
+  {
+    email: 'example123@example123.com',
+    password: 'example123Pass',
+    game_id: 2
+  },
+  */
   discardCard(targetDeck, cardIndex) {
     this.discard.cards.push((targetDeck.splice(cardIndex, 1)))
   }
