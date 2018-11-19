@@ -1,4 +1,6 @@
 const Deck = require("../deck");
+const serv = require('../../server/server')
+
 
 module.exports = class GoofSpiel {
 
@@ -13,6 +15,7 @@ module.exports = class GoofSpiel {
     this.P1Hand = new Deck(['H'], values)
     this.P2Hand = new Deck(['S'], values)
   }
+
   playerScored(player, inputValue) {
     if (player === 0) {
       this.playerOneScore += inputValue
@@ -20,6 +23,25 @@ module.exports = class GoofSpiel {
       this.playerTwoScore += inputValue
     }
   }
+  insertData() {
+    let outObj = {}
+    Object.keys(this).forEach(element => {
+      if (typeof this[element] === 'object') {
+        outObj[element] = this[element].Values.join('|')
+      } else {
+        outObj[element] = this[element]
+      }
+    });
+    return outObj
+    }
+    
+  /*
+  {
+    email: 'example123@example123.com',
+    password: 'example123Pass',
+    game_id: 2
+  },
+  */
   discardCard(targetDeck, cardIndex) {
     this.discard.cards.push((targetDeck.splice(cardIndex, 1)))
   }

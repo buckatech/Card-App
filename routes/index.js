@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const indexController = require('../controllers/indexController');
+const insert = require('../server/serveHelper/insert')
 
+router.use(indexController.set_data)
 // Get home page
 router.get('/', indexController.render_homepage);
 // Get saved games page
@@ -10,17 +12,6 @@ router.get('/savedgames', indexController.render_savegames);
 router.get('/goofSpiel', indexController.render_game_goof);
 // Post to goofSpiel
 router.post('/goofSpiel', indexController.post_game_goof);
-// // Post to login
-router.post('/login', (req, res) => {
-  console.log(req.body);
-  res.redirect('/');
-  res.end();
-});
-
-router.post('/register', (req, res) => {
-  res.redirect('/');
-  res.end();
-});
 
 //router.get('/gofish', indexController.render_game_gofish);
 // router.post('/login', indexController.post_login);
