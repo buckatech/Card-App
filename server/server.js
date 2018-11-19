@@ -1,24 +1,15 @@
 
 const PORT = process.env.PORT || 3001;
 const knex = require('./knex/knex.js');
-const serve = require('./serveHelper/serve')
-const insert = require('./serveHelper/insert')
-
+const game = require('../controllers/indexController')
 const input = process.argv
 let i = 0;
-/*
-if(input[2] === 'user'){
-  insert.user(knex)
-} else if (input[2] === 'game') {
-  insert.game(knex)
+//console.log(goof.insertData())
+exports.insertGame = (knex) => {
+  return knex('game').insert(goofSpiel.insertData())
+  .then((results) => {
+    console.log(`Added ${results.rowCount} Row`)
+  }).finally(() => {
+    knex.destroy()
+  })
 }
-*/
-exports.getGoofSpiel = () => {
-  return serve.game(knex)
-}
-exports.getTestRoute = () => {
-  knex.select('*').from('userdb')
-}
-
-// load page needs to include game_id
-

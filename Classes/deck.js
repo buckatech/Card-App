@@ -5,12 +5,25 @@ const removeFromValues = classHelp.removeFromValues
 module.exports = class Deck {
   constructor(suits, values) {
     this.cards = [];
-    if (typeof(suits) === 'object' && typeof(values) === 'object' )
-    suits.forEach(suitEle => {
-      values.forEach(valEle => {
-        let card = new Card(suitEle, valEle)
-        this.cards.push(card)
-      })
+    if (Array.isArray(suits) && Array.isArray(suits)) {
+    values.forEach(velement => {
+      suits.forEach(selement => {
+        let conCard = new Card
+        conCard.aCard = velement + selement
+        this.cards.push(conCard)
+      });
+    });
+  } else if (typeof(suits) === 'string' && typeof(values) === 'number') {
+    let conCard = new Card
+    conCard.aCard = suits + values
+    this.cards.push(conCard)
+  }
+  }
+  set aDeck (ecard) {
+    ecard.forEach(element => {
+      let eleCard = new Card
+      eleCard.aCard = element
+      this.cards.push(eleCard)
     });
   }
   get SuitValues() {

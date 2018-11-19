@@ -18,16 +18,15 @@ module.exports = class GoofSpiel {
   }
   set dbGoof(dbData) {
     this.id = 1
-    this.currentBet = dbData.currentBet
-    this.currentState = dbData.currentState
-    this.playerOneScore = dbData.playerOneScore
-    this.playerTwoScore = dbData.playerTwoScore
+    this.currentBet = parseInt(dbData.currentBet)
+    this.currentState = parseInt(dbData.currentState)
+    this.playerOneScore = parseInt(dbData.playerOneScore)
+    this.playerTwoScore = parseInt(dbData.playerTwoScore)
     this.activeCard = new Deck(['C'], dbData.activeCard.split('|'))
     this.discard = new Deck
-    this.P1Hand = new Deck(['H'], dbData.activeCard.split('|'))
-    this.P2Hand = new Deck(['S'], dbData.activeCard.split('|'))
+    this.P1Hand = new Deck(['H'], dbData.P1Hand.split('|'))
+    this.P2Hand = new Deck(['S'], dbData.P2Hand.split('|'))
   }
-
   playerScored(player, inputValue) {
     if (player === 0) {
       this.playerOneScore += inputValue
@@ -47,6 +46,7 @@ module.exports = class GoofSpiel {
     return outObj
     }
     
+
   /*
   {
     email: 'example123@example123.com',

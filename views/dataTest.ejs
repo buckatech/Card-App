@@ -6,7 +6,6 @@
 let testData = { id: 1, email: 'hi2@hi2.com', password: 'hiPass2', game_id: 1 };
 
 router.get('/dataTest', (req, res) => {
-console.log(testData);
 res.send(testData);
 res.render('/dataTest');
 });

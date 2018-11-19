@@ -23,7 +23,6 @@ exports.set_data = (req, res, next) => {
   });
 }
 
-
 /**
  *
  * @param {*} req
@@ -31,8 +30,7 @@ exports.set_data = (req, res, next) => {
  * @example User requests homepage
  * Sends 'Index' via get req
  */
-exports.render_homepage = (req, res, next) => {
-  console.log(goofSpiel)
+exports.render_homepage = (req, res) => {
   res.render('index')
 };
 
@@ -42,7 +40,6 @@ exports.render_savegames = (req, res) => {
 
 exports.render_game_goof = (req, res) => {
   if (goofSpiel.currentState === 0) {
-    console.log(goofSpiel, '2')
     res.render("goofSpiel", {
       Deck: goofSpiel.P1Hand.Images,
       Prize: goofSpiel.activeCard.Images[0],
@@ -50,8 +47,7 @@ exports.render_game_goof = (req, res) => {
       p1Score: goofSpiel.playerOneScore,
       p2Score: goofSpiel.playerTwoScore
     });
-  } else if (goofSpiel.currentState === 1){
-    console.log(goofSpiel, '3')    
+  } else if (goofSpiel.currentState === 1){   
     res.render("goofSpiel", {
       Deck: goofSpiel.P2Hand.Images,
       Prize: goofSpiel.activeCard.Images[0],
@@ -69,14 +65,19 @@ exports.post_game_goof = (req, res) => {
     let drawIndex = goofSpiel.P1Hand.Images.indexOf(`${req.body.card}.png`)
     goofSpiel.discardCard(goofSpiel.P1Hand.cards, drawIndex)
     goofSpiel.currentState = 1
-    res.redirect('/goofSpiel')
+    knex('game').first().update(goofSpiel.insertData())
+      .then(() => {
+        res.redirect('/goofSpiel')
+      })
   } else if (goofSpiel.currentState === 1){
     let drawIndex = goofSpiel.P2Hand.Images.indexOf(`${req.body.card}.png`)
     goofSpiel.discardCard(goofSpiel.P2Hand.cards, drawIndex)
     goofSpiel.discardCard(goofSpiel.activeCard.cards, 0)
-
     goofSpiel.currentState = 0
-    res.redirect('/goofSpiel')
+    knex('game').first().update(goofSpiel.insertData())
+    .then(() => {
+      res.redirect('/goofSpiel')
+    })
   } else {
     res.send('borked')
   }

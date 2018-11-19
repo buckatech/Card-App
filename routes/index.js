@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const indexController = require('../controllers/indexController');
-const insert = require('../server/serveHelper/insert')
+
 
 router.use(indexController.set_data)
 // Get home page
